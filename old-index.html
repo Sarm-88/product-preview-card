@@ -11,7 +11,6 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <link rel="stylesheet" href="styles.css" />
 
     <title>Frontend Mentor | Product preview card component</title>
@@ -19,33 +18,30 @@
 
   <body>
     <main>
-      <article class="product">
-        <picture class="image">
-          <source srcset="images/image-product-desktop.jpg" media="(min-width: 600px)">
-          <img src="images/image-product-mobile.jpg" alt="CHANNEL Perfume" />
-        </picture>
-
+      <div class="container">
+        <div class="image"></div>
         <div class="content">
           <p class="top-subtitle">Perfume</p>
-
+    
           <h1 class="title">Gabrielle Essence Eau De Parfum</h1>
-
+    
           <p class="main-text">
-            A floral, solar and voluptuous interpretation composed by Olivier
-            Polge, Perfumer-Creator for the House of CHANEL.
+            A floral, solar and voluptuous interpretation composed by Olivier Polge,
+            Perfumer-Creator for the House of CHANEL.
           </p>
-
+    
           <div class="prices">
             <p class="main-price">$149.99</p>
             <p class="old-price">$169.99</p>
           </div>
-
+    
           <button class="btn-add-to-cart">
-            <img src="images/icon-cart.svg" alt="cart-icon" class="cart-icon" />
+            <img src="images/icon-cart.svg" alt="cart-icon" class="cart-icon">
             <p class="btn-text">Add to Cart</p>
           </button>
         </div>
-      </article>
+      </div>
+
     </main>
   </body>
 </html>

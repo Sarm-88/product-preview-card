@@ -1,143 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 
 :root {
     /* Primary */
-    --dark-cyan: hsl(158, 36%, 37%);
-    --darker-cyan: hsl(158, 36%, 25%);
-    --cream: hsl(30, 38%, 92%);
+    --accent-main: hsl(158, 36%, 37%);
+    --accent-dark: hsl(158, 36%, 25%);
+    --primary: hsl(30, 38%, 92%);
 
     /* Neutral */
-    --very-dark-blue: hsl(212, 21%, 14%);
-    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --dark-text: hsl(212, 21%, 14%);
+    --light-text: hsl(228, 12%, 48%);
     --white: hsl(0, 0%, 100%);
+
+    --fw-main: 500;
+    --fw-bold: 700;
+
+    --fs-main: 0.875rem;
+    --fs-accent: 2rem
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
 body {
-    background-color: var(--cream);
-    font-size: 14px;
     min-height: 100vh;
+    background-color: var(--primary);
+    padding: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--fs-main);
+    font-weight: var(--fw-main);
+    color: var(--light-text);
+    display: grid;
+    place-content: center;
+    line-height: 1.5rem;
+}
+
+.product {
+    background-color: var(--white);
+    border-radius: .5rem;
     overflow: hidden;
+    display: grid;
+    max-width: 600px;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    width: 50em;
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.image {
-    width: 50%;
-    background-image: url(images/image-product-desktop.jpg);
-    background-size: cover;
+@media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .content {
-    padding: 2.5em;
-    width: 50%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 3em;
-}
-
-.content * {
-    margin: 0;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
 }
 
 .top-subtitle {
-    font-family: Montserrat, sans-serif;
-    font-weight: 500;
-    color: var(--dark-grayish-blue);
     text-transform: uppercase;
-    letter-spacing: .4em;
+    letter-spacing: .25rem;
 }
 
-.title {
-    font-family: Fraunces, serif;
-    font-size: 3em;
-    line-height: 1em;
-    color: var(--very-dark-blue);
-}
-
-.main-text {
-    font-family: Montserrat, sans-serif;
-    color: var(--dark-grayish-blue);
-    line-height: 2em;
-    letter-spacing: .02em;
+.title, .main-price {
+    font-family: "Fraunces", serif;
+    font-size: var(--fs-accent);
+    color: var(--dark-text);
+    line-height: 2rem;
 }
 
 .prices {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .main-price {
-    font-family: Fraunces, serif;
-    font-size: 3em;
-    color: var(--dark-cyan);
-    margin-right: 0.5em;
+    color: var(--accent-main);
 }
 
 .old-price {
-    font-family: Monsterrat, sans-serif;
-    color: var(--dark-cyan);
     text-decoration: line-through;
 }
 
 .btn-add-to-cart {
-    background-color: var(--dark-cyan);
     border: none;
-    border-radius: 10px;
-    font-family: Montserrat, sans-serif;
-    color: var(--white);
-    font-weight: 700;
-    font-size: 15px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 2em;
-    padding-block: 1em;
-    cursor: pointer;
-    transition: background-color, ease, .13s;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    background-color: var(--accent-main);
+    color: var(--white);
 }
 
 .btn-add-to-cart:active {
-    background-color: var(--darker-cyan)
-}
-
-.btn-text {
-    margin-left: 1em;
-}
-
-@media (max-width: 800px) {
-    .image {
-        background-image: url(images/image-product-mobile.jpg);
-        min-width: 100%;
-        min-height: 30%;
-    }
-
-    .container {
-        width: 25em;
-        height: 50em;
-        display: initial;
-    }
-
-    .content {
-        width: auto;
-        height: 70%;
-        gap: 1em;
-    }
+    background-color: var(--accent-dark);
 }
