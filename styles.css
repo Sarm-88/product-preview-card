@@ -130,17 +130,14 @@ main {
     }
 
     .container {
-        flex-direction: column;
-        width: 25em;
+        width: 30em;
         height: 50em;
-        justify-content: center;
+        display: initial;
     }
 
     .content {
         width: auto;
         height: 70%;
         gap: 1em;
-        background-color: red;
-        /* Help Me */
     }
 }
